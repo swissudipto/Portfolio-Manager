@@ -56,7 +56,14 @@ class additional{
 		 gst=(Brokage+ExchangeTxnCharges)*0.18;
 		 Dpcharge=15.93;
 		 Totalcharges=Brokage+STTCharges+ExchangeTxnCharges+SEBICharges+StampDuty+gst;
+		 if (Transmode=="true")
+		 {
 		 Totalcost=Totalinvested+Totalcharges;
+		 }
+		 else
+		 {
+			 Totalcost=Totalinvested-Totalcharges; 
+		 }
 	 }
 	 
 	 public double getBrokage() {
@@ -141,7 +148,16 @@ public class godmodeservlet extends HttpServlet {
       double Tmoney=ad.getTotalinvested();
       
       String Transmode=ad.getmode();
-
+      if (Transmode=="true")
+		 {
+    	  request.setAttribute("LebelBeforetax","Total Buying Price");
+    	  request.setAttribute("LebelAftertax","Final Buying Price(Charges Included)");
+		 }
+      else
+      {
+    	  request.setAttribute("LebelBeforetax","Total Selling Price");
+    	  request.setAttribute("LebelAftertax","Final Selling Price(Charges Included)");
+      }
     
       request.setAttribute("Cname",Cname);
       request.setAttribute("Bprice",Sprice);

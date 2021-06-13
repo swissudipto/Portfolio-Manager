@@ -53,7 +53,8 @@ table, th, td {
     <td ><b>Amount</b></td>  
   </tr>
   <tr>
-    <td>Total Invested Money</td>
+    <td><%String vale13 = (String) request.getAttribute("LebelBeforetax");
+    out.println( vale13 ) ;%></td>
     <td> <%
      double vale12 = (double) request.getAttribute("Tmoney" ) ;
       out.println( vale12 ) ;%></td>
@@ -108,7 +109,8 @@ table, th, td {
       out.println( vale7 ) ;%></td>
   </tr>
   <tr>
-    <td>Final Cost</td>
+    <td><%String vale14 = (String) request.getAttribute("LebelAftertax");
+    out.println( vale14 ) ;%></td>
     <td><%
      double vale8 = (double) request.getAttribute("Totalcost" ) ; 
       out.println( vale8 ) ;%></td>
