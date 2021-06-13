@@ -122,7 +122,6 @@ public class godmodeservlet extends HttpServlet {
 	   int Qantity =Integer.parseInt(request.getParameter("Quantity"));
 	   String Mode = request.getParameter("Mode");
 
-	  //Double Tmoney=Sprice*Qantity;
       PrintWriter out = response.getWriter();
       
       additional ad=new additional();
