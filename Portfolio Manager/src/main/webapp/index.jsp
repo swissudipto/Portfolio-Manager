@@ -35,7 +35,7 @@ p{
   font-size: 130%;
 }
 body {
-  background-image: url('https://welpmagazine.com/wp-content/uploads/2020/09/GettyImages-891634254_2400-acea07b464d94bedbd2d7b38f7c55e27.png');
+  background-image: url('./img/T1.png');
    background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -50,11 +50,11 @@ body {
   
 <form action="godmode" method="post">
   <label class="p4"for="fname">Company name</label>
-  <input type="text" id="fname" name="fname" ><br><br>
+  <input type="text" id="fname" name="fname" required ><br><br>
   <label class="p4" for="buyprice">Share Buy Price</label>
-  <input type="text" id="buyprice" name="buyprice"><br><br>
+  <input type="text" id="buyprice" name="buyprice" required><br><br>
   <label class="p4" for="Quantity">Share Quantity</label>
-  <input type="text" id="Quantity" name="Quantity"><br><br>
+  <input type="text" id="Quantity" name="Quantity" required><br><br>
   
   <div>
   <input  type="radio" id="Buy" name="Mode" value="Buy"
@@ -71,14 +71,7 @@ body {
 <br>
   	
   <input class="p4" type="submit" value="Submit">
-  <% 
-  	session.getAttribute("fname");
-	session.getAttribute("buyprice");
-	session.getAttribute("Quantity");
-		  
-		  
-		  
-		  %>
+
  
 </form>
 <br>

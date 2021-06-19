@@ -4,7 +4,9 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.math.*;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.sql.*;
 
 class additional{
 	  
@@ -22,6 +24,8 @@ class additional{
       double Totalcost;  
       String Transmode;
       double Totalinvested;
+      static String User;
+      static String Password;
 	
 	 void initialise(double Sprice,double Qantity,String Mode)
 	 {
@@ -107,9 +111,52 @@ class additional{
 		public String getmode() {
 			return Transmode;
 		}
+		
+		 void initialiseDBparameter(String Username)
+		 {
+			 User=Username;	 		 
+			 
+		 }
+		
+		
+		 public static Connection  initializeDatabase() throws SQLException
+	 	 {
+	 	 try {
+	 		 Class.forName("com.mysql.jdbc.Driver");
+	 		 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mindpalace","root","cmc123");
+	 		 //String user="masteradmin";
+	 		 
+	 		 
+	 		Statement stat=con.createStatement();
+	 		String SQL="select password from user where username='"+User+"'";
+
+            ResultSet rs=stat.executeQuery(SQL);
+            
+	 		 
+            while(rs.next())
+            {
+            	Password=rs.getString("password");
+                   
+            }   
+            
+	 		
+	 	 }
+	 		 
+	 	
+	 	 catch(ClassNotFoundException ex)
+	 	 {
+	 		System.out.println("Database Connection Failed "+ex);
+	 	 }
+		return null;
+	 	
+	 	
+	 	 }
+		 
+		 public String getPassword() {
+				return Password;
+			}
+			
 	 
-	 
-	
 }
 
 
@@ -124,16 +171,26 @@ public class godmodeservlet extends HttpServlet {
    public void service(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	   
-	   String Cname=request.getParameter("fname");
-	   double Sprice=Double.parseDouble(request.getParameter("buyprice"));
-	   int Qantity =Integer.parseInt(request.getParameter("Quantity"));
-	   String Mode = request.getParameter("Mode");
+	   String Cname="abcd";
+	   double Sprice=0;
+	   int Qantity =0;
+	   String Mode = "Buy";
+	   
+	   Cname=request.getParameter("fname");
+	   Sprice=Double.parseDouble(request.getParameter("buyprice"));
+	   Qantity =Integer.parseInt(request.getParameter("Quantity"));
+	   Mode = request.getParameter("Mode");
 
       PrintWriter out = response.getWriter();
+      //
+  
+      //
+
       
       additional ad=new additional();
       ad.initialise(Sprice,Qantity,Mode);
       ad.calculate();
+      
       
       
       double Brokage=ad.getBrokage();
@@ -178,7 +235,7 @@ public class godmodeservlet extends HttpServlet {
       request.setAttribute("Tmoney",Tmoney);  
       
       
-
+      out.println("Hello World");
      
       
       RequestDispatcher rd=request.getRequestDispatcher("Calpage.jsp");  
