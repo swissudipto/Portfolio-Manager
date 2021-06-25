@@ -25,6 +25,17 @@
 <servlet-name>def</servlet-name>
 <url-pattern>/logon</url-pattern>
 </servlet-mapping>
+
+  <servlet>
+  <servlet-name>Confirm_buy</servlet-name>
+  <servlet-class>com.profsanku.buyservlet</servlet-class>
+  </servlet>
+  
+<servlet-mapping>
+<servlet-name>Confirm_buy</servlet-name>
+<url-pattern>/buy</url-pattern>
+</servlet-mapping>
+  
   
   
 </web-app>

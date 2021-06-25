@@ -238,7 +238,7 @@ public class godmodeservlet extends HttpServlet {
       out.println("Hello World");
      
       
-      RequestDispatcher rd=request.getRequestDispatcher("Calpage.jsp");  
+      RequestDispatcher rd=request.getRequestDispatcher("Confirmbuy.jsp");  
       rd.forward(request, response);  
      
    }

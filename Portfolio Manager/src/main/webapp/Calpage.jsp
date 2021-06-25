@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Calculated</title>
+<link rel="stylesheet" href="styles.css">
 <style type="text/css">
 html, body {
   width: 100%;
@@ -103,7 +104,7 @@ table, th, td {
       out.println( vale6 ) ;%></td>
   </tr>
   <tr>
-    <td>Total additional Charges</td>
+    <td id="Addcharge">Total additional Charges</td>
     <td><%
      double vale7 = (double) request.getAttribute("Totalcharges" ) ; 
       out.println( vale7 ) ;%></td>
@@ -112,10 +113,17 @@ table, th, td {
     <td><%String vale14 = (String) request.getAttribute("LebelAftertax");
     out.println( vale14 ) ;%></td>
     <td><%
-     double vale8 = (double) request.getAttribute("Totalcost" ) ; 
+     double vale8 = (double) request.getAttribute("Totalcost" ) ;
+    request.setAttribute("Name", "Sudipto");
       out.println( vale8 ) ;%></td>
   </tr>
+     
 </table>
+<form action="buy" class="login-form2">
+
+<input type="submit" value="Confirm Buy">
+  
+</form>
 
 </body>
 </html>

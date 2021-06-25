@@ -18,7 +18,10 @@ public class Logonservlet extends HttpServlet {
 		
 		 String User=request.getParameter("uname");
 		 String Password=request.getParameter("pward");
-		
+		 if (Password==null)
+		 {
+		 Password="n/a";
+		 }
 		additional ad=new additional();
 		
 		ad.initialiseDBparameter(User);
