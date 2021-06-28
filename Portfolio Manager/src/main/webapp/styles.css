@@ -74,3 +74,51 @@ body{
 	outline:none;
 	border-radius:5px;
 }
+
+.login-form3
+{
+width:350px;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	color: #fff;
+	
+}
+
+
+.login-form3 input{
+	top:80%;
+	font-size:16px;
+	width:100%;
+	padding:15px 10px;
+	border: 0;
+	outline:none;
+	border-radius:5px;
+}
+
+.Investmentdtls{
+	width:350px;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	color: #fff;
+}
+.Investmentdtls input {
+	font-size:16px;
+	width:100%;
+	padding:15px 10px;
+	border: 0;
+	outline:none;
+	border-radius:5px;
+}
+.Menupage{
+	width:350px;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	color: #fff;
+
+}

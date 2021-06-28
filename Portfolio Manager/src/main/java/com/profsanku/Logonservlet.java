@@ -38,7 +38,7 @@ public class Logonservlet extends HttpServlet {
 
 		if(Password.equals(ad.getPassword())) {
 			
-			response.sendRedirect("index.jsp"); 
+			response.sendRedirect("Menupage.jsp"); 
 		}
 		else
 		{

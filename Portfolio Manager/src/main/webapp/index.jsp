@@ -5,55 +5,20 @@
 <html>
 <head>
 <title >PortfolioManager</title>
-	<style type="text/css">
-	.p1 {
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-}
-
-.p3 {
-  font-family: "Lucida Console", "Courier New", monospace;
-  align-items: center;
-}
-.p4{
-	color: yellowgreen;
-}
-img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-}
-p{
-  border: 1px solid black;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-right: 100px;
-  margin-left: 50px;
-  background-color: cadetblue;
-  text-align: center;
-  font-size: 130%;
-}
-body {
-  background-image: url('./img/T1.png');
-   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-
-	</style>
+<link rel="stylesheet" type="text/css" href="styles.css">
+	
 </head>
 <body >
-<p><strong> Portfolio Management System </strong></p>
-<br><br>
+
   
-<form action="godmode" method="post">
-  <label class="p4"for="fname">Company name</label>
+<form class="login-form3" action="godmode" method="post" >
+<h1> Share Buy/Sell Calculator Cum Transaction Entry </h1>
+<br><br>
+  <label for="fname">Company name</label>
   <input type="text" id="fname" name="fname" required ><br><br>
-  <label class="p4" for="buyprice">Share Buy Price</label>
+  <label for="buyprice">Share Buy Price</label>
   <input type="text" id="buyprice" name="buyprice" required><br><br>
-  <label class="p4" for="Quantity">Share Quantity</label>
+  <label  for="Quantity">Share Quantity</label>
   <input type="text" id="Quantity" name="Quantity" required><br><br>
   
   <div>
@@ -70,18 +35,19 @@ body {
 <br>
 <br>
   	
-  <input class="p4" type="submit" value="Submit">
+  <input  type="submit" value="Submit">
+  <br>
+
+<a  href="https://groww.in/dashboard/explore/stocks">Click here to start Trading</a><br>
+
+<br>
+
+
+<a href="about.html">About us</a>
 
  
 </form>
-<br>
 
-<a class="p4" href="https://groww.in/dashboard/explore/stocks">Click here to start Trading</a><br>
-
-<br>
-
-
-<a class="p4" href="about.html">About us</a>
 
 
 

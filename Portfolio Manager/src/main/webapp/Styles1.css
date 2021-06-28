@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+body{
+	background:url('./img/IMG_8980.JPG');
+	background-size:cover;
+}
+.login-form3 input{
+	top:80%;
+	font-size:16px;
+	width:100%;
+	padding:15px 10px;
+	border: 0;
+	outline:none;
+	border-radius:5px;
+}
+

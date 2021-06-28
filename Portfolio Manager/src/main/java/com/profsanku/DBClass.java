@@ -12,6 +12,11 @@ public class DBClass {
     static String Sharename;
     static String Buydate;
     static int SL;
+    static int SL1;
+    static String invdate;
+    static double invamount;  
+
+
     
     void  initialize(String Sname,int Quantity,double Sprice,double Addcharges,double Tinvested,double Fcost,String Date)
     {
@@ -64,6 +69,41 @@ public class DBClass {
  	
  	
  	 }
+	 void  initializeforinvestmententry(String investmentdate,double investmentmount)
+	 {
+		 invdate=investmentdate;
+		 invamount=investmentmount;
+		 
+	 }
+	 public static Connection  initializeDatabaseforinvestmententry() throws SQLException
+	 {
+		 try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 		 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mindpalace","root","cmc123");
+ 		Statement stat=con.createStatement();
+ 		String SQL1="SELECT IFNULL(MAX(J.SL),0) SL FROM Investmentdtls J;";
+ 		
+ 		 ResultSet rs=stat.executeQuery(SQL1);
+         
+ 		 
+         while(rs.next())
+         {
+        	 SL1=Integer.parseInt(rs.getString("SL"));
+                
+         }
+         
+         String SQL = "INSERT INTO Investmentdtls(SL,Invested_amount,Investment_date) values("+(SL1+1)+","+invamount+",'"+invdate+"')";
+ 		stat.executeUpdate(SQL);
+ 		 
+ 		 
+ 		 
+			return null;
+ 
+	 }
 
 
 }

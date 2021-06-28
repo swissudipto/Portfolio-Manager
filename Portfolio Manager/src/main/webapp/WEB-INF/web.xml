@@ -35,6 +35,16 @@
 <servlet-name>Confirm_buy</servlet-name>
 <url-pattern>/buy</url-pattern>
 </servlet-mapping>
+
+ <servlet>
+  <servlet-name>Investment</servlet-name>
+  <servlet-class>com.profsanku.investmententryservlet</servlet-class>
+  </servlet>
+  
+<servlet-mapping>
+<servlet-name>Investment</servlet-name>
+<url-pattern>/investmententry</url-pattern>
+</servlet-mapping>
   
   
   
