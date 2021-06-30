@@ -18,7 +18,7 @@
 <p>User Name:</p>	
 <input  type="text" id="uname" name="uname" placeholder="User Name"  required ><br><br>
 <p>Password:</p>	
-<input   type="text" id="pward" name="pward" placeholder="Password" required ><br><br>
+<input   type="password" id="pward" name="pward" placeholder="Password" required ><br><br>
 
 
 <input  type="submit" value="Submit">

@@ -7,6 +7,7 @@ import java.math.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
+import java.text.DecimalFormat;
 
 class additional{
 	  
@@ -37,6 +38,7 @@ class additional{
 	 
 	 void calculate()
 	 {
+
 		 Totalinvested=Shareprice*NoofShares;
 		 Brokage=Totalinvested*0.0005;
 		 STTCharges=Math.round(Totalinvested*0.001);
@@ -68,6 +70,7 @@ class additional{
 		 {
 			 Totalcost=Totalinvested-Totalcharges; 
 		 }
+		 
 	 }
 	 
 	 public double getBrokage() {
