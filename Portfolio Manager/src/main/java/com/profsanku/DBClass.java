@@ -14,7 +14,9 @@ public class DBClass {
     static int SL;
     static int SL1;
     static String invdate;
-    static double invamount;  
+    static double invamount;
+    static String Totinvestedamount;  
+
 
 
     
@@ -104,6 +106,35 @@ public class DBClass {
 			return null;
  
 	 }
+	 public static Connection  initializeDatabaseforinvestmentshow() throws SQLException
+	 {
+		 try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	 		 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mindpalace","root","cmc123");
+	 		Statement stat=con.createStatement(); 
+	 		String SQL="SELECT SUM(L.Invested_amount) TOTINVAMT FROM investmentdtls L;";
+	 		ResultSet rs=stat.executeQuery(SQL);
+	 		while(rs.next())
+	         {
+	 			Totinvestedamount=rs.getString("TOTINVAMT");
+	                
+	         }
+	 		
+		return null;
+	 }
+
+
+	public static String getTotinvestedamount() {
+		return Totinvestedamount;
+	}
+
+
+	
+	 
 
 
 }

@@ -14,7 +14,9 @@
 
 	<a href="index.jsp">1.Buy/Sell Share cum calculator</a>
 	<br><br>
-	<a href="investmententry.jsp">2.Investment Entry</a>	
+	<a href="investmententry.jsp">2.Investment Entry</a>
+	<br><br>
+	<a href="investmentshow.jsp">3.Invested Amount</a>		
 	</div>
 
 </body>

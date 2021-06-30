@@ -45,6 +45,16 @@
 <servlet-name>Investment</servlet-name>
 <url-pattern>/investmententry</url-pattern>
 </servlet-mapping>
+
+<servlet>
+  <servlet-name>InvestmentShow</servlet-name>
+  <servlet-class>com.profsanku.investmentshowservlet</servlet-class>
+  </servlet>
+  
+<servlet-mapping>
+<servlet-name>InvestmentShow</servlet-name>
+<url-pattern>/investmentshow</url-pattern>
+</servlet-mapping>
   
   
   
