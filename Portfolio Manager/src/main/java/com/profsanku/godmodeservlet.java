@@ -4,6 +4,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.math.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
@@ -44,6 +45,9 @@ class additional{
 		 STTCharges=Math.round(Totalinvested*0.001);
 		 ExchangeTxnCharges=Totalinvested*0.0000345;
 		 SEBICharges=Totalinvested*0.0000005;
+		 if (Brokage>20) {
+			 Brokage=20;
+		 }
 		 
 		 if (SEBICharges<=0.01)
 		 {
@@ -54,14 +58,16 @@ class additional{
 		 if (Transmode=="true")
 		 {
 			 StampDuty=Math.round(Totalinvested*0.00015)  ;
+			 Dpcharge=0;
 		 }
 		 else
 		 {
-			 StampDuty=0; 
+			 StampDuty=0;
+			 Dpcharge=15.93;
 		 }
 		 gst=(Brokage+ExchangeTxnCharges)*0.18;
-		 Dpcharge=15.93;
-		 Totalcharges=Brokage+STTCharges+ExchangeTxnCharges+SEBICharges+StampDuty+gst;
+		
+		 Totalcharges=Brokage+STTCharges+ExchangeTxnCharges+SEBICharges+StampDuty+gst+Dpcharge;
 		 if (Transmode=="true")
 		 {
 		 Totalcost=Totalinvested+Totalcharges;
@@ -184,6 +190,7 @@ public class godmodeservlet extends HttpServlet {
 	   Qantity =Integer.parseInt(request.getParameter("Quantity"));
 	   Mode = request.getParameter("Mode");
 
+
       PrintWriter out = response.getWriter();
       //
   
@@ -216,9 +223,10 @@ public class godmodeservlet extends HttpServlet {
       else
       {
     	  request.setAttribute("LebelBeforetax","Total Selling Price");
-    	  request.setAttribute("LebelAftertax","Final Selling Price(Charges Included)");
+    	  request.setAttribute("LebelAftertax","Final Selling Price(After paying additional Charges )");
       }
-    
+      
+
       request.setAttribute("Cname",Cname);
       request.setAttribute("Bprice",Sprice);
       request.setAttribute("Quantity",Qantity);
@@ -236,10 +244,10 @@ public class godmodeservlet extends HttpServlet {
       request.setAttribute("Totalcost",Totalcost);
       
       request.setAttribute("Tmoney",Tmoney);  
+      request.setAttribute("Mode",Mode);  
       
       
-      out.println("Hello World");
-     
+
       
       RequestDispatcher rd=request.getRequestDispatcher("Confirmbuy.jsp");  
       rd.forward(request, response);  

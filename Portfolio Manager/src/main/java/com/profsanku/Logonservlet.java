@@ -3,6 +3,7 @@ package com.profsanku;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,6 +24,7 @@ public class Logonservlet extends HttpServlet {
 		 Password="n/a";
 		 }
 		additional ad=new additional();
+		DBClass DB=new DBClass();
 		
 		ad.initialiseDBparameter(User);
 
@@ -37,6 +39,9 @@ public class Logonservlet extends HttpServlet {
 			}	
 
 		if(Password.equals(ad.getPassword())) {
+			
+			
+			
 			
 			response.sendRedirect("Menupage.jsp"); 
 		}

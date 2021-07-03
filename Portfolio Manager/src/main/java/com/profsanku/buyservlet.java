@@ -31,9 +31,10 @@ public class buyservlet extends HttpServlet {
 		Double Sprice=Double.parseDouble(request.getParameter("Bprice"));
 		Double TotalInvested=Double.parseDouble(request.getParameter("Tmoney"));
 		Double TotalCharge=Double.parseDouble(request.getParameter("Totalcharges"));
+		String Tmode=request.getParameter("Mode");
 
 
-		db.initialize(Sname, Quantity, Sprice, TotalCharge, TotalInvested, FinalCost,Date1);
+		db.initialize(Sname, Quantity, Sprice, TotalCharge, TotalInvested, FinalCost,Date1,Tmode);
 	      try {
 			DBClass.initializeDatabase();
 			out.println("Success");

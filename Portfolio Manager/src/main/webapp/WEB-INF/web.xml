@@ -56,6 +56,16 @@
 <url-pattern>/investmentshow</url-pattern>
 </servlet-mapping>
   
+  <servlet>
+  <servlet-name>BuysellPagecalling</servlet-name>
+  <servlet-class>com.profsanku.Buysellservlet</servlet-class>
+  </servlet>
+  
+<servlet-mapping>
+<servlet-name>BuysellPagecalling</servlet-name>
+<url-pattern>/Buysell</url-pattern>
+</servlet-mapping>
+  
   
   
 </web-app>

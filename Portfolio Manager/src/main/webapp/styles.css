@@ -122,6 +122,15 @@ width:350px;
 	color: #fff;
 
 }
+.Menupage input{
+	font-size:16px;
+	width:100%;
+	padding:15px 10px;
+	border: 0;
+	outline:none;
+	border-radius:5px;
+
+	}
 .Investmentshow{
 		width:350px;
 	top:50%;
@@ -138,4 +147,13 @@ width:350px;
 	border: 0;
 	outline:none;
 	border-radius:5px;
+}
+.Ddown{
+	font-size:16px;
+	width:100%;
+	padding:15px 10px;
+	border: 0;
+	outline:none;
+	border-radius:5px;
+	
 }

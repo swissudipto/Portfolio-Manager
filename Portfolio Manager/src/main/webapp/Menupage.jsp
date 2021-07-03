@@ -8,16 +8,28 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+	
 	<div class="Menupage">
-
 	<h1>Kindly Choose From the below options</h1>
 
-	<a href="index.jsp">1.Buy/Sell Share cum calculator</a>
-	<br><br>
-	<a href="investmententry.jsp">2.Investment Entry</a>
-	<br><br>
-	<a href="investmentshow.jsp">3.Invested Amount</a>		
+	
+	<br>
+	<br>
+	<form action="index.jsp" >
+	<input type="submit" name="buysell" value="Buy/Sell Share cum calculator">
+	</form>
+	<br>
+	<br>
+	
+	<form action="investmententry.jsp">
+	<input type="submit" name="InvEntry" value="Investment Entry">
+	</form>
+	<br>
+	<br>
+	
+	<form action="investmentshow.jsp">
+	<input type="submit" name="InvAmount" value="See the Total Invested Amount">
+	</form>
 	</div>
-
 </body>
 </html>
